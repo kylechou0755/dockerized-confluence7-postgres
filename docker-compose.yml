@@ -32,5 +32,5 @@ services:
         max-file: "50"
 
 volumes:
-    confluence-webweb:
-    confluence-web-db:
+    confluence-web:
+    confluence-db:
