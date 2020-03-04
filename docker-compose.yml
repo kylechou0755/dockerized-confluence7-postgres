@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  confluence-web:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: confluence-web
+    ports:
+      - 8090:8090
+      - 8091:8091
+    env_file:
+      - .env.confluence
+    volumes:
+      - confluence-web:/var/atlassian/confluence
+    links:
+      - confluence-db
+  confluence-db:
+    restart: always
+    image: postgres:10-alpine
+    container_name: confluence-db
+    volumes:
+      - confluence-db:/var/lib/postgresql/confluence-db
+    env_file:
+      - .env.db
+    logging:
+      # limit logs retained on host to 25MB
+      driver: "json-file"
+      options:
+        max-size: "500k"
+        max-file: "50"
+
+volumes:
+    confluence-webweb:
+    confluence-web-db:
