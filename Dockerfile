@@ -1,18 +1,5 @@
-# FROM openjdk:8-alpine
-
-# Base image
-FROM alpine:latest
-
-# Default to UTF-8 file.encoding
-ENV LANG C.UTF-8
-
-# Configuration variables
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk/jre
-ENV PATH $PATH:/usr/lib/jvm/java-11-openjdk/jre/bin:/usr/lib/jvm/java-11-openjdk/bin
-
-# Installi Java
-RUN set -x \
-	  && apk --no-cache add openjdk11 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/c
+# Defining base image
+eduardevops/openjdk11-alpine
 
 # Setup useful environment variables
 ENV CONF_HOME     /var/atlassian/confluence
@@ -31,7 +18,7 @@ RUN set -x \
     && chown daemon:daemon     "${CONF_HOME}" \
     && mkdir -p                "${CONF_INSTALL}/conf" \
     && curl -Ls                "https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-${CONF_VERSION}.tar.gz" | tar -xz --directory "${CONF_INSTALL}" --strip-components=1 --no-same-owner \
-    && curl -Ls                "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.44.tar.gz" | tar -xz --directory "${CONF_INSTALL}/confluence/WEB-INF/lib" --strip-components=1 --no-same-owner "mysql-connector-java-5.1.44/mysql-connector-java-5.1.44-bin.jar" \
+    # && curl -Ls                "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.44.tar.gz" | tar -xz --directory "${CONF_INSTALL}/confluence/WEB-INF/lib" --strip-components=1 --no-same-owner "mysql-connector-java-5.1.44/mysql-connector-java-5.1.44-bin.jar" \
     && chmod -R 700            "${CONF_INSTALL}/conf" \
     && chmod -R 700            "${CONF_INSTALL}/temp" \
     && chmod -R 700            "${CONF_INSTALL}/logs" \
@@ -54,17 +41,13 @@ RUN set -x \
     && touch -d "@0"           "${CONF_INSTALL}/conf/server.xml" \
     && chown daemon:daemon     "${JAVA_CACERTS}"
 
-# Use the default unprivileged account. This could be considered bad practice
-# on systems where multiple processes end up being executed by 'daemon' but
-# here we only ever run one process anyway.
+
 USER daemon:daemon
 
 # Expose default HTTP connector port.
 EXPOSE 8090 8091
 
-# Set volume mount points for installation and home directory. Changes to the
-# home directory needs to be persisted as well as parts of the installation
-# directory due to eg. logs.
+# Set volume mount points for installation and home directory. 
 VOLUME ["/var/atlassian/confluence", "/opt/atlassian/confluence/logs"]
 
 # Set the default working directory as the Confluence home directory.
