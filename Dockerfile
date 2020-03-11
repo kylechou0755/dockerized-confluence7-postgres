@@ -1,5 +1,5 @@
 # Defining base image
-eduardevops/openjdk11-alpine
+FROM openjdk:8-alpine
 
 # Setup useful environment variables
 ENV CONF_HOME     /var/atlassian/confluence
@@ -47,7 +47,7 @@ USER daemon:daemon
 # Expose default HTTP connector port.
 EXPOSE 8090 8091
 
-# Set volume mount points for installation and home directory. 
+# Set volume mount points for installation and home directory.
 VOLUME ["/var/atlassian/confluence", "/opt/atlassian/confluence/logs"]
 
 # Set the default working directory as the Confluence home directory.
