@@ -56,3 +56,26 @@ For Confluence with MariaDB use the following project ![Jira with MariaDB](https
 All names can be, and should be changed.
 
 -----
+
+### Deployment
+Clone repo to your server (I would suggest use /opt directory)
+```less
+sudo git clone https://github.com/eduardevops/dockerized-confluence7-postgresql.git
+```
+
+Navigate to the project folder
+```less
+cd /path/to/dockerized-confluence7-postgresql
+```
+
+Make docker-entrypoint.sh file executable for ```other``` and run the composer
+
+```less
+chmod o+x docker-entrypoint.sh
+docker-compose up -d
+```
+
+Check logs in real-time
+```less
+docker-compose logs -f
+```
