@@ -26,3 +26,8 @@ For Confluence with MariaDB use the following project ![Jira with MariaDB](https
 ### Prerequisites
 *	[Docker](https://www.docker.com/)
 *	[Docker Compose](https://docs.docker.com/compose/install/)
+
+### Project Tree
+
+```less
+```
