@@ -30,4 +30,16 @@ For Confluence with MariaDB use the following project ![Jira with MariaDB](https
 ### Project Tree
 
 ```less
+├── Dockerfile
+├── Dockerfile-OpenJDK8
+├── LICENSE
+├── README.md
+├── assets
+│   └── logo.jpg
+├── backup
+│   ├── db_backup.sh
+│   ├── db_restore.sh
+│   └── jira_backup.sh
+├── docker-compose.yml
+└── docker-entrypoint.sh
 ```
