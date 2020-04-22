@@ -19,7 +19,7 @@ For Confluence with MySQL use the following project ![Jira with MySQL](https://g
 For Confluence with MariaDB use the following project ![Jira with MariaDB](https://github.com/eduardevops/dockerized-confluence7-mariadb)
 
 ### Versions
-*	Confluence v7.3.4
+*	Confluence v7.4.0
 *	PostgreSQL v10.12
 * OpenJDK v11.0.6/v8.0.212
 
