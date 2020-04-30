@@ -30,10 +30,10 @@ For Confluence with MariaDB use the following project ![Jira with MariaDB](https
 ### Project Tree
 
 ```less
+├── .env.db
+├── .env.confluence
 ├── Dockerfile
 ├── Dockerfile-OpenJDK8
-├── LICENSE
-├── README.md
 ├── assets
 │   └── logo.jpg
 ├── backup
@@ -50,15 +50,14 @@ For Confluence with MariaDB use the following project ![Jira with MariaDB](https
 | db_backup.sh   | Small script to backup dockerized database                                                         |
 | db_restore.sh  | Small script to restore dockerized database                                                        |
 | jira_backup.sh | Small script to copy Jira exported XML files and remove files older then 3 days                    |
-| .pgpass        | In a user's home directory can contain passwords to be used if the connection requires a password  |
 
 ### Rename
-All names can be, and should be changed.
+All names can be, moreover, in most cases, should be changed.
 
 -----
 
 ### Deployment
-Clone repo to your server (I would suggest use /opt directory)
+Clone repo to your server. I suggest using ```/opt``` directory
 ```less
 sudo git clone https://github.com/eduardevops/dockerized-confluence7-postgresql.git
 ```
