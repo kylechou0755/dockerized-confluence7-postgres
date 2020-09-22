@@ -1,6 +1,6 @@
 ### Dockerized Confluence with Postgres
 
-![Logo](./assets/logo.jpg)
+![Logo](./assets/git3.png)
 
 ### Status
 <img alt="Image Size" src="https://img.shields.io/docker/image-size/eduardevops/confluence7-postgres" style="max-width:100%;"> <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/eduardevops/confluence7-postgres" style="max-width:100%;"> <img alt="Build Status" src="https://img.shields.io/docker/cloud/build/eduardevops/confluence7-postgres" style="max-width:100%;"> <img alt="Licenses" src="https://img.shields.io/badge/License-GPLv3-blue.svg" style="max-width:100%;">
@@ -46,7 +46,7 @@ For Confluence with MariaDB use the following project ![Jira with MariaDB](https
 | jira_backup.sh | Small script to copy Jira exported XML files and remove files older than 3 days                    |
 
 ### Rename
-It is highy advised to change all names 
+It is highy advised to change all names
 
 -----
 
