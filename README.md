@@ -12,10 +12,8 @@
 * [Rename](#Rename)
 * [Deployment](#Deployment)
 
-This is a fork of ![Martin Aksel Jensen's](https://github.com/cptactionhank) project ![docker-atlassian-confluence](https://github.com/cptactionhank/docker-atlassian-confluence)  <br>
-
-For Confluence with MySQL use the following project ![Jira with MySQL](https://github.com/eduardevops/dockerized-confluence7-mysql) <br>
-For Confluence with MariaDB use the following project ![Jira with MariaDB](https://github.com/eduardevops/dockerized-confluence7-mariadb)
+For Confluence with MySQL use the following project [Jira with MySQL](https://github.com/eduardevops/dockerized-confluence7-mysql) <br>
+For Confluence with MariaDB use the following project [Jira with MariaDB](https://github.com/eduardevops/dockerized-confluence7-mariadb)
 
 ### Prerequisites
 *	[Docker](https://www.docker.com/)
