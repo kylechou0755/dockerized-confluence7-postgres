@@ -13,7 +13,7 @@ services:
     env_file:
       - .env.confluence
     volumes:
-      - confluence-web:/var/atlassian/confluence
+      - ./confluence-web:/var/atlassian/confluence
     links:
       - confluence-db
   confluence-db:
@@ -21,7 +21,7 @@ services:
     image: postgres:10-alpine
     container_name: confluence-db
     volumes:
-      - confluence-db:/var/lib/postgresql/confluence-db
+      - ./confluence-db:/var/lib/postgresql/confluence-db
     env_file:
       - .env.db
     logging:
@@ -30,7 +30,3 @@ services:
       options:
         max-size: "500k"
         max-file: "50"
-
-volumes:
-    confluence-web:
-    confluence-db:
